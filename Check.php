@@ -44,14 +44,15 @@ function check_empty($field, $value) {
     global $errors;
     if (empty($value)) {
         //$field will help identify which part the error is being generated from
-        $errors[$field] = ucfirst(str_replace('_', ' ', $field)) . " is required.";
+        //we use str_replace so that for instance - instead of first_name is will display first name. Proper error displayed!
+        $errors[$field] = (str_replace('_', ' ', $field)) . " is required.";
     }
 }
 
 function validate_no_special_chars($field, $value) {
     global $errors;
     if (!preg_match("/^[a-zA-Z ]*$/", $value)) {
-        $errors[$field] = ucfirst(str_replace('_', ' ', $field)) . " should not contain special characters.";
+        $errors[$field] = (str_replace('_', ' ', $field)) . " should not contain special characters.";
     }
 }
 
