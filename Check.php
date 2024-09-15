@@ -3,7 +3,8 @@
 $errors = [];
 $firstName = $lastName = $dob = $gender = $email = $cellNumber = $batch = '';
 
-//We will use function to remove any white space and make sure to convert SPECIAL characters to HTML entities 
+//We will use function to remove any white space and make sure to convert SPECIAL characters to HTML entities
+//Whenever a post is made on the server the below code ( validation ) will be executed.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = check_input($_POST['first_name']);
     $lastName = check_input($_POST['last_name']);
@@ -13,13 +14,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cellNumber = check_input($_POST['cell_number']);
     $batch = check_input($_POST['batch']);
 
-    validate_empty('first_name', $firstName);
-    validate_empty('last_name', $lastName);
-    validate_empty('dob', $dob);
-    validate_empty('gender', $gender);
-    validate_empty('email', $email);
-    validate_empty('cell_number', $cellNumber);
-    validate_empty('batch', $batch);
+    check_empty('first_name', $firstName);
+    check_empty('last_name', $lastName);
+    check_empty('dob', $dob);
+    check_empty('gender', $gender);
+    check_empty('email', $email);
+    check_empty('cell_number', $cellNumber);
+    check_empty('batch', $batch);
     
     validate_no_special_chars('first_name', $firstName);
     validate_no_special_chars('last_name', $lastName);
@@ -38,7 +39,7 @@ function check_input($data) {
     return htmlspecialchars(trim($data));
 }
 
-function validate_empty($field, $value) {
+function check_empty($field, $value) {
     global $errors;
     if (empty($value)) {
         $errors[$field] = ucfirst(str_replace('_', ' ', $field)) . " is required.";
