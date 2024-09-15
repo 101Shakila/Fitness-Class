@@ -13,7 +13,9 @@
         ?>
         <form action="" method="POST">
             <label for="first_name">First Name:</label>
+            <!-- htmlspecialchars converts specials characters to HTML entities -->
             <input type="text" name="first_name" value="<?= htmlspecialchars($firstName) ?>" required>
+            <!-- ?= ? is the shorthand for echo ... -->
             <span class="error"><?= $errors['first_name'] ?? '' ?></span>
 
             <label for="last_name">Last Name:</label>
