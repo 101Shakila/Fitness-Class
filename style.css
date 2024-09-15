@@ -1,25 +1,41 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #121212;
+    /* Dark background */
     margin: 0;
     padding: 0;
+    display: flex;
+    /* Flexbox to center content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    /* Full height */
 }
 
 .container {
     width: 400px;
-    margin: 50px auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e;
+    /* Dark container background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /* Darker shadow */
+    border-radius: 8px;
+    /* Rounded corners */
 }
 
 h2 {
     text-align: center;
+    color: #fff;
+    /* White text for better visibility */
 }
 
 label {
     display: block;
     margin: 10px 0 5px;
+    color: #ccc;
+    /* Light grey text */
 }
 
 input[type="text"],
@@ -29,6 +45,14 @@ select {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
+    background-color: #333;
+    /* Dark input background */
+    color: #fff;
+    /* White text */
+    border: 1px solid #555;
+    /* Border color */
+    border-radius: 4px;
+    /* Rounded input fields */
 }
 
 .error {
@@ -43,6 +67,8 @@ input[type="submit"] {
     color: #fff;
     border: none;
     cursor: pointer;
+    border-radius: 4px;
+    /* Rounded button */
 }
 
 input[type="submit"]:hover {
