@@ -9,7 +9,7 @@
     <div class="container">
         <h2>Register for a Fitness Class</h2>
         <?php
-        include 'validate.php';
+        include 'Check.php';
         ?>
         <form action="" method="POST">
             <label for="first_name">First Name:</label>
