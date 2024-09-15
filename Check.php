@@ -1,15 +1,17 @@
 <?php
+//Just initializing the below variables to prevent "undefined variables"
 $errors = [];
 $firstName = $lastName = $dob = $gender = $email = $cellNumber = $batch = '';
 
+//We will use function to remove any white space and make sure to convert SPECIAL characters to HTML entities 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $firstName = sanitize_input($_POST['first_name']);
-    $lastName = sanitize_input($_POST['last_name']);
-    $dob = sanitize_input($_POST['dob']);
-    $gender = sanitize_input($_POST['gender']);
-    $email = sanitize_input($_POST['email']);
-    $cellNumber = sanitize_input($_POST['cell_number']);
-    $batch = sanitize_input($_POST['batch']);
+    $firstName = check_input($_POST['first_name']);
+    $lastName = check_input($_POST['last_name']);
+    $dob = check_input($_POST['dob']);
+    $gender = check_input($_POST['gender']);
+    $email = check_input($_POST['email']);
+    $cellNumber = check_input($_POST['cell_number']);
+    $batch = check_input($_POST['batch']);
 
     validate_empty('first_name', $firstName);
     validate_empty('last_name', $lastName);
@@ -32,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function sanitize_input($data) {
+function check_input($data) {
     return htmlspecialchars(trim($data));
 }
 
