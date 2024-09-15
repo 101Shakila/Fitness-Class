@@ -39,9 +39,11 @@ function check_input($data) {
     return htmlspecialchars(trim($data));
 }
 
+//In PHP we use GLOBAL to access variable that's outside of the function
 function check_empty($field, $value) {
     global $errors;
     if (empty($value)) {
+        //$field will help identify which part the error is being generated from
         $errors[$field] = ucfirst(str_replace('_', ' ', $field)) . " is required.";
     }
 }
