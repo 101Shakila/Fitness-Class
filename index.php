@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Fitness Class Registration</title>
+    <title>Registration for Fitness Class</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h2>Register for a Fitness Class</h2>
+        <h2>Register - Fitness Class</h2>
         <?php
         include 'Check.php';
         ?>

@@ -16,7 +16,8 @@ body {
 
 .container {
     width: 400px;
-    padding: 20px;
+    padding: 30px;
+    /* Added padding for space around content */
     background-color: #1e1e1e;
     /* Dark container background */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -42,9 +43,11 @@ input[type="text"],
 input[type="email"],
 input[type="date"],
 select {
-    width: 100%;
+    width: calc(100% - 20px);
+    /* Reduced width to add spacing */
     padding: 8px;
-    margin-bottom: 10px;
+    margin: 0 auto 10px auto;
+    /* Centered margin and spacing */
     background-color: #333;
     /* Dark input background */
     color: #fff;
@@ -53,6 +56,8 @@ select {
     /* Border color */
     border-radius: 4px;
     /* Rounded input fields */
+    display: block;
+    /* Ensure inputs are block elements */
 }
 
 .error {
@@ -61,7 +66,8 @@ select {
 }
 
 input[type="submit"] {
-    width: 100%;
+    width: calc(100% - 20px);
+    /* Reduced width to add spacing */
     padding: 10px;
     background-color: #007bff;
     color: #fff;
@@ -69,6 +75,10 @@ input[type="submit"] {
     cursor: pointer;
     border-radius: 4px;
     /* Rounded button */
+    margin: 0 auto;
+    /* Centered margin */
+    display: block;
+    /* Ensure button is block element */
 }
 
 input[type="submit"]:hover {
