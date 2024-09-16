@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration for Fitness Class</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fitness_style.css">
 </head>
 <body>
     <div class="container">
