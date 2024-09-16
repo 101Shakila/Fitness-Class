@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration Success</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="fitness_style.css">
 </head>
 <body>
     <div class="container">
         <h2>Registration Successful!</h2>
-        <p>Thank you for registering for our fitness class. We look forward to seeing you!</p>
+        <p>You have successfully registered to the fitness program! Welcome new player!</p>
     </div>
 </body>
 </html>
