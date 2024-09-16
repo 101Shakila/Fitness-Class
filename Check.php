@@ -58,6 +58,9 @@ function checking_special_chars($field, $value) {
     }
 }
 
+
+
+//basic in-built function to validate if input is valid email address - filter_validate_email
 function validate_email($email) {
     global $errors;
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
