@@ -8,7 +8,7 @@
 <body>
     <div class="container">
         <h2>Registration Successful!</h2>
-        <h3>You have successfully registered to the fitness program! Welcome new player!</h3>
+        <h2>You have successfully registered to the fitness program! Welcome new player!</h2>
     </div>
 </body>
 </html>
