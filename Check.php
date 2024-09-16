@@ -75,6 +75,8 @@ function validate_cell_number($cellNumber) {
     }
 }
 
+
+//We are going to calculate the date difference and calculate if the user is above the age 18.
 function check_age($dob) {
     global $errors;
     $birthDate = new DateTime($dob);
