@@ -22,12 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     check_empty('cell_number', $cellNumber);
     check_empty('batch', $batch);
     
-    validate_no_special_chars('first_name', $firstName);
-    validate_no_special_chars('last_name', $lastName);
+    checking_special_chars('first_name', $firstName);
+    checking_special_chars('last_name', $lastName);
     
     validate_email($email);
     validate_cell_number($cellNumber);
-    validate_age($dob);
+    check_age($dob);
     
     if (empty($errors)) {
         header('Location: success.php');
@@ -49,8 +49,10 @@ function check_empty($field, $value) {
     }
 }
 
-function validate_no_special_chars($field, $value) {
+//So here we will restrict the usage of special characters!
+function checking_special_chars($field, $value) {
     global $errors;
+    //preg_match is a PHP function - and we will check to see if the input is input is upper/lower case and has spaces and nothing else!
     if (!preg_match("/^[a-zA-Z ]*$/", $value)) {
         $errors[$field] = (str_replace('_', ' ', $field)) . " should not contain special characters.";
     }
@@ -70,7 +72,7 @@ function validate_cell_number($cellNumber) {
     }
 }
 
-function validate_age($dob) {
+function check_age($dob) {
     global $errors;
     $birthDate = new DateTime($dob);
     $currentDate = new DateTime();
