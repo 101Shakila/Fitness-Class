@@ -35,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function check_input($data) {
-    return htmlspecialchars(trim($data));
+function check_input($input) {
+    return htmlspecialchars(trim($input));
 }
 
 //In PHP we use GLOBAL to access variable that's outside of the function
